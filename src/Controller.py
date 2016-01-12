@@ -1,5 +1,6 @@
 import sys
 from PySide.QtGui import *
+from src import View
 
 __author__ = 'Michael Weinberger'
 __date__ = 20150112
@@ -15,7 +16,7 @@ class Controller(QWidget):
 
         super().__init__(parent)
 
-        self.Dialog = View.Ui_Dialog()
+        self.Dialog = View.Ui_Form()
         self.Dialog.setupUi(self)
 
         self.Dialog.read.clicked.connect(lambda: self.action())
