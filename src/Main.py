@@ -1,6 +1,7 @@
 import sys
 from PySide.QtGui import *
 from src import View
+from src import CSVimport
 
 __author__ = 'Michael Weinberger'
 __date__ = 20150112
@@ -26,7 +27,8 @@ class Controller(QWidget):
     """
     def action(self):
 
-        print("Action!")
+        print("Rennt!")
+
 
 """
     Starten des Programms
