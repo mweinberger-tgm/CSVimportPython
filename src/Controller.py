@@ -1,7 +1,5 @@
 import sys
-from PySide.QtCore import *
 from PySide.QtGui import *
-import View
 
 __author__ = 'Michael Weinberger'
 __date__ = 20150112
@@ -11,7 +9,7 @@ __version__ = 0.1
 class Controller(QWidget):
 
     """
-        Erstellt das Spiel, verbindet die einzelnen Komponenten miteinander
+        Initialisiert Programm
     """
     def __init__(self, parent=None):
 
