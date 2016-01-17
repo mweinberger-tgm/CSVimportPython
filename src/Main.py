@@ -1,7 +1,7 @@
 import sys
 from PySide.QtGui import *
-from src import View
-from src import CSVimport
+from src.CSVimport import *
+from src.View import *
 
 __author__ = 'Michael Weinberger'
 __date__ = 20150112
@@ -17,18 +17,26 @@ class Controller(QWidget):
 
         super().__init__(parent)
 
-        self.Dialog = View.Ui_Form()
+        self.Dialog = Ui_Form()
         self.Dialog.setupUi(self)
 
         self.Dialog.read.clicked.connect(lambda: self.action())
 
     """
-        CSV-Import Klassenaufruf
+        Klassenaufruf CSV-Import
     """
     def action(self):
 
-        print("Rennt!")
+        do = CSVimport("SalesJan2009.csv")
+        out = do.readcsv()
 
+        tmp = ""
+        for row in out:
+            tmp += str(row)
+            tmp += "<br><br>"
+
+        tmp += "Total rows: " + str(len(out))
+        self.Dialog.out.setText(tmp)
 
 """
     Starten des Programms
